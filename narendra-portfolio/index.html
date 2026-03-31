@@ -957,7 +957,7 @@ footer{
     </p>
     <div class="hbtns fade-up d4">
       <a href="#projects" class="bp">View My Work ↓</a>
-      <a href="narendra-portfolio/Narendra_Kalisetti_Resume.pdf" target="_blank" class="bs">⬇ Download CV</a>
+      <a href="Narendra_Kalisetti_Resume.pdf" target="_blank" class="bs">⬇ Download CV</a>
     </div>
     <div class="hsoc fade-up d5">
       <a href="https://github.com/narendrakalisetti" target="_blank" class="si" title="GitHub">⚡</a>
@@ -1483,7 +1483,7 @@ footer{
       </div>
     </div>
     <div class="res-btns">
-      <a href="https://narendra-portfolio/Narendra_Kalisetti_Resume.pdf" target="_blank" class="bp">⬇ Download PDF Resume</a>
+      <a href="Narendra_Kalisetti_Resume.pdf" target="_blank" class="bp">⬇ Download PDF Resume</a>
       <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="bs">💼 LinkedIn Profile</a>
     </div>
   </div>
@@ -1551,15 +1551,4 @@ document.querySelectorAll('.svc-item').forEach(item=>{
     const d=services[item.dataset.panel];
     const panel=document.getElementById('svcPanel');
     // Clear colour classes
-    panel.className='svc-panel highlighted '+d.col;
-    document.getElementById('spBadge').textContent=d.badge;
-    document.getElementById('spBadge').className='sp-badge';
-    document.getElementById('spIco').textContent=d.ico;
-    document.getElementById('spTitle').textContent=d.title;
-    document.getElementById('spDesc').textContent=d.desc;
-    const tags=document.getElementById('spTags');
-    tags.innerHTML=d.tags.map(t=>`<span class="sptag">${t}</span>`).join('');
-  });
-});
-
-// Intersection observer for skill ba
+ 
