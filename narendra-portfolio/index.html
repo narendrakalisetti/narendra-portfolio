@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narendra Kalisetti — Azure Data Engineer & Data Analyst · UK</title>
+<meta name="description" content="Azure Data Engineer and Data Analyst · 2+ years · PySpark · Terraform · SQL · Power BI · MSc Data Science · Open to UK roles">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════ */
+:root{
+  --ink:#08091a;
+  --deep:#0b0d20;
+  --mid:#0f1128;
+  --card:#131526;
+  --card2:#171930;
+  --rim:rgba(255,255,255,0.06);
+  --rim2:rgba(139,92,246,0.35);
+  --v:#7c3aed;
+  --v2:#9d6cff;
+  --v3:#6d28d9;
+  --vi:#a78bfa;
+  --pk:#ec4899;
+  --bl:#3b82f6;
+  --cy:#22d3ee;
+  --gn:#10b981;
+  --am:#f59e0b;
+  --wh:#f0f4ff;
+  --gr:#8899bb;
+  --dm:#3a4b6b;
+  --grad:linear-gradient(135deg,#7c3aed,#9d6cff);
+  --grad2:linear-gradient(135deg,#7c3aed,#ec4899);
+  --grad3:linear-gradient(135deg,#3b82f6,#22d3ee);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);color:var(--wh);
+  font-family:'Outfit',sans-serif;
+  font-size:15px;line-height:1.65;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+::selection{background:rgba(124,58,237,.3);color:#fff;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--v);border-radius:2px;}
+
+/* ═══════════════════════════════════════════════
+   PAGE LOAD ANIMATION
+═══════════════════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.06);opacity:1;}}
+@keyframes slideRight{from{width:0;}to{width:var(--w);}}
+@keyframes countUp{from{opacity:0;}to{opacity:1;}}
+
+.fade-up{animation:fadeUp .7s ease both;}
+.d1{animation-delay:.1s;}.d2{animation-delay:.2s;}.d3{animation-delay:.3s;}
+.d4{animation-delay:.4s;}.d5{animation-delay:.5s;}.d6{animation-delay:.6s;}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 5%;
+  background:rgba(8,9,26,.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--rim);
+}
+.nb{display:flex;align-items:center;gap:.65rem;}
+.nbm{
+  width:36px;height:36px;border-radius:9px;
+  background:var(--grad);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem;font-weight:700;color:#fff;
+}
+.nbn{font-weight:700;font-size:.95rem;}
+.nl{display:flex;gap:2rem;list-style:none;}
+.nl a{font-size:.78rem;font-weight:500;color:var(--gr);transition:color .2s;}
+.nl a:hover{color:var(--wh);}
+.nhire{
+  background:var(--grad);color:#fff;
+  padding:.5rem 1.35rem;border-radius:6px;
+  font-size:.78rem;font-weight:700;
+  transition:opacity .2s,transform .2s;
+}
+.nhire:hover{opacity:.85;transform:translateY(-1px);}
+
+/* ═══════════════════════════════════════════════
+   HERO — exact split layout from reference
+═══════════════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:78px;
+  position:relative;overflow:hidden;
+}
+/* ambient blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.b1{width:500px;height:500px;background:#7c3aed;opacity:.16;top:-150px;left:-100px;animation:breathe 8s ease infinite;}
+.b2{width:350px;height:350px;background:#ec4899;opacity:.1;bottom:-80px;right:10%;animation:breathe 10s ease infinite 2s;}
+.b3{width:280px;height:280px;background:#3b82f6;opacity:.07;top:35%;left:42%;animation:breathe 12s ease infinite 4s;}
+
+/* LEFT */
+.hl{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:4rem 2.5rem 4rem 5%;
+  position:relative;z-index:2;
+}
+.hbadge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.25);
+  border-radius:100px;padding:.32rem .95rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;color:#10b981;
+  letter-spacing:.07em;margin-bottom:1.6rem;width:fit-content;
+}
+.hdot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite;}
+.hgreet{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.75rem;color:var(--vi);
+  letter-spacing:.1em;margin-bottom:.5rem;
+}
+h1{
+  font-size:clamp(2.6rem,5.2vw,4.2rem);
+  font-weight:900;letter-spacing:-.05em;
+  line-height:.95;color:var(--wh);
+  margin-bottom:.4rem;
+}
+.htitle{
+  font-size:clamp(1.3rem,2.6vw,2.1rem);
+  font-weight:800;letter-spacing:-.04em;
+  line-height:1.05;margin-bottom:1.4rem;
+}
+.t-azure{
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.t-amp{color:var(--dm);font-weight:300;margin:0 .2rem;}
+.t-ana{color:var(--wh);}
+.hdesc{
+  font-size:.95rem;color:var(--gr);
+  max-width:440px;margin-bottom:1.85rem;
+  line-height:1.8;
+}
+.hdesc strong{color:var(--wh);}
+.hbtns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.bp{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--grad);color:#fff;
+  padding:.78rem 1.65rem;border-radius:7px;
+  font-size:.84rem;font-weight:700;
+  transition:transform .2s,box-shadow .2s;
+}
+.bp:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(124,58,237,.4);}
+.bs{
+  display:inline-flex;align-items:center;gap:.45rem;
+  color:var(--gr);padding:.78rem 1.65rem;border-radius:7px;
+  font-size:.84rem;font-weight:600;
+  border:1px solid var(--rim);transition:all .2s;
+}
+.bs:hover{border-color:var(--rim2);color:var(--vi);}
+.hsoc{display:flex;gap:.6rem;}
+.si{
+  width:38px;height:38px;border-radius:9px;
+  border:1px solid var(--rim);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;color:var(--gr);
+  transition:all .2s;
+}
+.si:hover{border-color:var(--rim2);color:var(--vi);}
+
+/* Stats below name — matching reference */
+.hstats{
+  display:flex;gap:2.5rem;
+  margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid var(--rim);
+}
+.hstat{}
+.hsn{
+  font-size:1.8rem;font-weight:900;
+  letter-spacing:-.04em;line-height:1;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hsl{font-size:.72rem;color:var(--gr);margin-top:.2rem;}
+
+/* RIGHT */
+.hr{
+  display:flex;align-items:center;justify-content:center;
+  padding:4rem 5% 4rem 2rem;
+  position:relative;z-index:2;
+}
+.hw{position:relative;width:100%;max-width:400px;}
+/* Photo card — exact reference style */
+.hphoto{
+  width:100%;aspect-ratio:3/4.1;max-height:520px;
+  border-radius:22px;
+  background:linear-gradient(145deg,var(--card),var(--deep));
+  border:1px solid var(--rim);
+  overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.hphoto::before{
+  content:'';position:absolute;
+  width:65px;height:65px;
+  border-top:2.5px solid var(--v);
+  border-left:2.5px solid var(--v);
+  top:16px;left:16px;border-radius:4px 0 0 0;
+}
+.hphoto::after{
+  content:'';position:absolute;
+  width:65px;height:65px;
+  border-bottom:2.5px solid var(--pk);
+  border-right:2.5px solid var(--pk);
+  bottom:16px;right:16px;border-radius:0 0 4px 0;
+}
+.hphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.hphoto-init{
+  font-size:8rem;font-weight:900;
+  background:var(--grad2);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;opacity:.2;user-select:none;
+}
+/* Floating cards */
+.fc{
+  position:absolute;
+  background:rgba(10,12,28,.9);
+  backdrop-filter:blur(12px);
+  border:1px solid var(--rim);border-radius:12px;
+  padding:.75rem 1rem;
+  display:flex;align-items:center;gap:.65rem;
+  animation:fadeIn .8s ease both;
+}
+.fc-tl{top:20px;left:-52px;animation-delay:.8s;}
+.fc-br{bottom:52px;right:-52px;animation-delay:1s;}
+.fc-bl{bottom:16px;left:-28px;animation-delay:1.2s;}
+.fci{
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;flex-shrink:0;
+}
+.fci-p{background:rgba(124,58,237,.18);}
+.fci-g{background:rgba(16,185,129,.18);}
+.fci-b{background:rgba(59,130,246,.18);}
+.fcv{font-size:1.2rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--wh);}
+.fcl{font-size:.62rem;color:var(--gr);margin-top:.1rem;}
+
+/* ═══════════════════════════════════════════════
+   NUMBERS STRIP
+═══════════════════════════════════════════════ */
+#strip{
+  background:var(--mid);
+  border-top:1px solid var(--rim);border-bottom:1px solid var(--rim);
+  padding:2.5rem 5%;
+}
+.sr{display:grid;grid-template-columns:repeat(4,1fr);}
+.si-box{
+  text-align:center;border-right:1px solid var(--rim);
+  padding:1.1rem 1.2rem;
+}
+.si-box:last-child{border-right:none;}
+.sv{
+  font-size:2.8rem;font-weight:900;
+  letter-spacing:-.06em;line-height:1;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.su{font-size:1.8rem;}
+.sl{font-size:.78rem;color:var(--gr);margin-top:.35rem;line-height:1.4;}
+
+/* ═══════════════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════════════ */
+.sec{padding:6rem 5%;position:relative;}
+.sec-alt{background:var(--deep);}
+.ey{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.67rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--vi);
+  display:flex;align-items:center;gap:.65rem;
+  margin-bottom:.6rem;
+}
+.ey::before{
+  content:'';display:block;
+  width:20px;height:2px;
+  background:var(--grad);border-radius:1px;
+}
+.sh{
+  font-size:clamp(1.7rem,3.2vw,2.4rem);
+  font-weight:900;letter-spacing:-.045em;
+  line-height:1.05;color:var(--wh);margin-bottom:.7rem;
+}
+.sh em{
+  font-style:normal;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.sp{color:var(--gr);font-size:.93rem;max-width:500px;margin-bottom:2.75rem;line-height:1.8;}
+.row-top{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:1rem;margin-bottom:2.75rem;
+}
+.row-top .sp{margin-bottom:0;}
+.see-all{
+  font-size:.78rem;color:var(--vi);font-weight:600;
+  display:flex;align-items:center;gap:.3rem;
+  white-space:nowrap;transition:gap .2s;
+}
+.see-all:hover{gap:.6rem;}
+
+/* ═══════════════════════════════════════════════
+   SERVICES — expandable list + active panel
+   (exact reference: list left, expanded panel right)
+═══════════════════════════════════════════════ */
+.svc-outer{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.svc-list{display:flex;flex-direction:column;gap:0;}
+.svc-item{
+  border-bottom:1px solid var(--rim);
+  overflow:hidden;
+  transition:background .2s;
+}
+.svc-item:first-child{border-top:1px solid var(--rim);}
+.svc-trigger{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 0;cursor:pointer;
+  transition:all .2s;
+}
+.svc-trigger:hover .svc-name{color:var(--vi);}
+.svc-left{display:flex;align-items:center;gap:.85rem;}
+.svc-num{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;color:var(--dm);
+  width:24px;flex-shrink:0;
+}
+.svc-name{
+  font-size:.92rem;font-weight:700;color:var(--wh);
+  transition:color .2s;
+}
+.svc-arr{
+  width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--rim);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;color:var(--gr);
+  transition:all .3s;flex-shrink:0;
+}
+.svc-item.open .svc-arr{
+  background:var(--v);border-color:var(--v);
+  color:#fff;transform:rotate(45deg);
+}
+.svc-item.open .svc-name{color:var(--vi);}
+/* Active panel */
+.svc-panel{
+  position:sticky;top:90px;
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:16px;padding:2rem;
+  transition:all .3s;
+}
+.svc-panel.highlighted{border-color:var(--rim2);}
+.sp-badge{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.64rem;letter-spacing:.08em;
+  padding:.28rem .75rem;border-radius:100px;
+  margin-bottom:1.25rem;
+}
+.sp-ico{
+  width:52px;height:52px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:1.1rem;
+}
+.sp-title{
+  font-size:1.15rem;font-weight:800;
+  color:var(--wh);margin-bottom:.65rem;
+}
+.sp-desc{font-size:.85rem;color:var(--gr);line-height:1.75;margin-bottom:1.25rem;}
+.sp-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.sptag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;color:var(--dm);
+  padding:.2rem .55rem;
+  background:var(--mid);border:1px solid var(--rim);
+  border-radius:3px;
+}
+/* Service colours */
+.c-p .sp-badge{color:var(--vi);background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);}
+.c-p .sp-ico{background:rgba(124,58,237,.12);}
+.c-b .sp-badge{color:var(--bl);background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);}
+.c-b .sp-ico{background:rgba(59,130,246,.12);}
+.c-g .sp-badge{color:var(--gn);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);}
+.c-g .sp-ico{background:rgba(16,185,129,.12);}
+.c-a .sp-badge{color:var(--am);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);}
+.c-a .sp-ico{background:rgba(245,158,11,.12);}
+.c-r .sp-badge{color:var(--pk);background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);}
+.c-r .sp-ico{background:rgba(236,72,153,.12);}
+.c-c .sp-badge{color:var(--cy);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);}
+.c-c .sp-ico{background:rgba(34,211,238,.12);}
+
+/* ═══════════════════════════════════════════════
+   PROJECTS — tab filter + image thumbnail grid
+═══════════════════════════════════════════════ */
+.ptabs{
+  display:flex;gap:.4rem;
+  border-bottom:1px solid var(--rim);
+  margin-bottom:2rem;padding-bottom:0;
+}
+.ptab{
+  font-size:.77rem;font-weight:600;color:var(--gr);
+  padding:.5rem 1.1rem;
+  border-radius:6px 6px 0 0;cursor:pointer;
+  transition:all .2s;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+}
+.ptab.on{color:var(--vi);border-bottom-color:var(--v);}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+/* ← larger cards with proper thumbnail */
+.pcard{
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:16px;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+.pcard:hover{border-color:var(--rim2);transform:translateY(-4px);}
+.pthumb{
+  height:190px;position:relative;overflow:hidden;
+  border-bottom:1px solid var(--rim);
+}
+.pthumb-bg{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.pt-grid{/* mini data viz */
+  display:grid;grid-template-columns:repeat(7,1fr);
+  grid-template-rows:repeat(4,1fr);
+  gap:3px;width:180px;height:100px;opacity:.35;
+}
+.ptg-bar{
+  border-radius:2px;
+  background:var(--v);
+  align-self:end;
+}
+.pglow{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(124,58,237,.12),transparent 70%);
+}
+.pthumb-content{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:.5rem;
+}
+.pthumb-icon{font-size:2.5rem;filter:drop-shadow(0 0 12px rgba(124,58,237,.5));}
+.pthumb-stack{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;color:rgba(255,255,255,.4);
+  letter-spacing:.08em;text-align:center;padding:0 1rem;
+}
+/* Coloured accent line */
+.pcard-accent{height:2px;width:100%;}
+.ac-f{background:linear-gradient(90deg,var(--gn),var(--cy));}
+.ac-e{background:linear-gradient(90deg,var(--am),var(--pk));}
+.ac-n{background:linear-gradient(90deg,var(--bl),var(--cy));}
+.ac-c{background:linear-gradient(90deg,var(--v),var(--vi));}
+.ac-r{background:linear-gradient(90deg,var(--cy),var(--bl));}
+.ac-s{background:linear-gradient(90deg,var(--pk),var(--v));}
+.pbody{padding:1.35rem;}
+.pdom{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;padding:.18rem .55rem;
+  border-radius:3px;margin-bottom:.7rem;
+  display:inline-block;letter-spacing:.06em;
+}
+.df{color:var(--gn);border:1px solid rgba(16,185,129,.28);background:rgba(16,185,129,.05);}
+.de{color:var(--am);border:1px solid rgba(245,158,11,.28);background:rgba(245,158,11,.05);}
+.dn{color:var(--bl);border:1px solid rgba(59,130,246,.28);background:rgba(59,130,246,.05);}
+.dc{color:var(--vi);border:1px solid rgba(167,139,250,.28);background:rgba(167,139,250,.05);}
+.dr{color:var(--cy);border:1px solid rgba(34,211,238,.28);background:rgba(34,211,238,.05);}
+.ds{color:var(--pk);border:1px solid rgba(236,72,153,.28);background:rgba(236,72,153,.05);}
+.ptitle{
+  font-size:.97rem;font-weight:700;color:var(--wh);
+  margin-bottom:.45rem;line-height:1.25;
+}
+/* Key metrics row */
+.pmets{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem;}
+.pmet{
+  font-size:.72rem;font-weight:700;color:var(--vi);
+  background:rgba(124,58,237,.07);
+  border:1px solid rgba(124,58,237,.18);
+  padding:.18rem .55rem;border-radius:4px;
+}
+.pdesc{font-size:.79rem;color:var(--gr);line-height:1.65;margin-bottom:1rem;}
+.pdesc strong{color:var(--wh);}
+.pfoot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.pchips{display:flex;flex-wrap:wrap;gap:.3rem;}
+.pch{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.58rem;color:var(--dm);
+  padding:.15rem .45rem;
+  background:var(--mid);border:1px solid var(--rim);
+  border-radius:3px;
+}
+.plnk{
+  font-size:.73rem;color:var(--vi);font-weight:600;
+  display:flex;align-items:center;gap:.3rem;
+  transition:gap .2s;white-space:nowrap;
+}
+.plnk:hover{gap:.55rem;}
+
+/* ═══════════════════════════════════════════════
+   EXPERIENCE — 2-col timeline (exact reference)
+═══════════════════════════════════════════════ */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.excol-hd{
+  display:flex;align-items:center;gap:.65rem;
+  font-size:.93rem;font-weight:700;color:var(--wh);
+  margin-bottom:2rem;padding-bottom:1rem;
+  border-bottom:1px solid var(--rim);
+}
+.excol-ico{
+  width:32px;height:32px;border-radius:8px;
+  background:rgba(124,58,237,.14);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;
+}
+.tl{display:flex;flex-direction:column;}
+.tli{display:flex;gap:1rem;position:relative;}
+.tli::before{
+  content:'';position:absolute;
+  left:10px;top:25px;bottom:-12px;
+  width:1px;background:var(--rim);
+}
+.tli:last-child::before{display:none;}
+.tldot{
+  width:22px;height:22px;border-radius:50%;
+  border:2px solid var(--v);background:var(--ink);
+  flex-shrink:0;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;
+}
+.tldot::after{content:'';width:7px;height:7px;border-radius:50%;background:var(--v);}
+.tlb{padding-bottom:2.1rem;}
+.tlper{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.63rem;color:var(--vi);
+  letter-spacing:.07em;margin-bottom:.22rem;
+}
+.tlttl{font-size:.93rem;font-weight:700;color:var(--wh);margin-bottom:.1rem;}
+.tlco{font-size:.78rem;color:var(--gr);margin-bottom:.6rem;}
+.tlbul{list-style:none;display:flex;flex-direction:column;gap:.42rem;}
+.tlbul li{
+  font-size:.79rem;color:var(--gr);
+  display:flex;align-items:flex-start;gap:.45rem;line-height:1.6;
+}
+.tlbul li::before{content:'▸';color:var(--v);flex-shrink:0;font-size:.6rem;margin-top:.22rem;}
+.tlbul li strong{color:var(--wh);}
+
+/* ═══════════════════════════════════════════════
+   SKILLS — icon tags + progress bars
+   + circular skill rings (like reference)
+═══════════════════════════════════════════════ */
+.sk-outer{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.sk-cats{display:flex;flex-direction:column;gap:1.5rem;}
+.skcat-t{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--dm);
+  margin-bottom:.65rem;
+}
+.sktags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.sktag{
+  display:flex;align-items:center;gap:.45rem;
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:8px;padding:.62rem .85rem;
+  font-size:.77rem;color:var(--gr);font-weight:500;
+  transition:all .2s;
+}
+.sktag:hover{border-color:var(--rim2);color:var(--wh);}
+.sktag span:first-child{font-size:.95rem;}
+/* Circular skill rings — matching reference icons */
+.sk-circles{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.skc{
+  display:flex;flex-direction:column;align-items:center;gap:.65rem;
+}
+.skc-ring{
+  width:80px;height:80px;position:relative;flex-shrink:0;
+}
+.skc-ring svg{width:80px;height:80px;transform:rotate(-90deg);}
+.skc-ring .track{
+  fill:none;stroke:var(--rim);stroke-width:5;
+}
+.skc-ring .fill{
+  fill:none;stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:220;stroke-dashoffset:220;
+  transition:stroke-dashoffset 1.5s ease;
+}
+.skc-ring .pct{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:.75rem;font-weight:800;
+  font-family:'JetBrains Mono',monospace;
+  color:var(--wh);
+}
+.skc-lbl{
+  font-size:.73rem;font-weight:600;color:var(--gr);
+  text-align:center;line-height:1.3;
+}
+/* skill bar alternative */
+.sbars{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;}
+.sbar{}
+.sbar-hd{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.38rem;}
+.sbar-n{color:var(--wh);font-weight:500;}
+.sbar-p{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--vi);}
+.sbar-tr{height:3px;background:var(--rim);border-radius:2px;overflow:hidden;}
+.sf{height:100%;border-radius:2px;transition:width 1.2s ease;}
+.sf-p{background:linear-gradient(90deg,var(--v),var(--vi));}
+.sf-g{background:linear-gradient(90deg,var(--gn),var(--cy));}
+.sf-b{background:linear-gradient(90deg,var(--bl),var(--cy));}
+.sf-a{background:linear-gradient(90deg,var(--am),var(--pk));}
+
+/* ═══════════════════════════════════════════════
+   DISSERTATION — research section
+═══════════════════════════════════════════════ */
+.diss-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.dbadge{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:rgba(139,92,246,.07);
+  border:1px solid rgba(139,92,246,.22);
+  border-radius:100px;padding:.3rem .88rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.64rem;color:var(--vi);
+  letter-spacing:.07em;margin-bottom:1.3rem;
+}
+.dh{
+  font-size:1.45rem;font-weight:900;
+  letter-spacing:-.03em;color:var(--wh);
+  line-height:1.2;margin-bottom:1.2rem;
+}
+.dtext p{
+  font-size:.88rem;color:var(--gr);
+  line-height:1.8;margin-bottom:.85rem;
+}
+.dtext p strong{color:var(--wh);}
+.dtags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem;}
+.dtag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;color:var(--vi);
+  padding:.2rem .55rem;border-radius:3px;
+  border:1px solid rgba(139,92,246,.22);
+  background:rgba(139,92,246,.04);
+}
+.dpanel{
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:16px;overflow:hidden;
+}
+.dpanel-hd{
+  padding:1rem 1.5rem;border-bottom:1px solid var(--rim);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;color:var(--dm);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.drow{
+  display:flex;align-items:center;gap:.85rem;
+  padding:.95rem 1.5rem;border-bottom:1px solid var(--rim);
+  transition:background .2s;
+}
+.drow:last-child{border-bottom:none;}
+.drow:hover{background:rgba(255,255,255,.02);}
+.dico{
+  width:32px;height:32px;flex-shrink:0;
+  border-radius:7px;background:rgba(139,92,246,.1);
+  display:flex;align-items:center;justify-content:center;font-size:.9rem;
+}
+.dk{font-size:.7rem;color:var(--dm);}
+.dv{font-size:.82rem;color:var(--wh);font-weight:500;margin-top:.06rem;}
+
+/* ═══════════════════════════════════════════════
+   TESTIMONIALS — "Client Stories" exact reference
+═══════════════════════════════════════════════ */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.tcard{
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:14px;padding:1.65rem;
+  transition:border-color .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.tcard::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--grad);opacity:0;
+  transition:opacity .25s;
+}
+.tcard:hover{border-color:var(--rim2);transform:translateY(-3px);}
+.tcard:hover::before{opacity:1;}
+.tq{font-size:2rem;color:var(--v);line-height:1;margin-bottom:.75rem;opacity:.45;}
+.tt{font-size:.82rem;color:var(--gr);line-height:1.75;margin-bottom:1.3rem;font-style:italic;}
+.tt strong{color:var(--wh);font-style:normal;}
+.tau{display:flex;align-items:center;gap:.65rem;}
+.tav{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--grad);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:800;color:#fff;flex-shrink:0;
+}
+.tn{font-size:.82rem;font-weight:700;color:var(--wh);}
+.tr{font-size:.7rem;color:var(--gr);}
+
+/* ═══════════════════════════════════════════════
+   RECENT BLOGS SECTION (from reference)
+═══════════════════════════════════════════════ */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.bcard{
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:14px;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+.bcard:hover{border-color:var(--rim2);transform:translateY(-3px);}
+.bthumb{
+  height:120px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  font-size:2.5rem;
+}
+.bthumb-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(124,58,237,.12),transparent 70%);
+}
+.bbody{padding:1.1rem;}
+.btag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;color:var(--vi);
+  background:rgba(124,58,237,.07);
+  border:1px solid rgba(124,58,237,.18);
+  padding:.18rem .5rem;border-radius:3px;
+  display:inline-block;margin-bottom:.6rem;
+}
+.btitle{font-size:.88rem;font-weight:700;color:var(--wh);margin-bottom:.4rem;line-height:1.3;}
+.bdate{font-size:.7rem;color:var(--dm);}
+
+/* ═══════════════════════════════════════════════
+   CONTACT — full section with form + info grid
+═══════════════════════════════════════════════ */
+#contact{padding:6rem 5%;background:var(--mid);position:relative;overflow:hidden;}
+.cblob{
+  position:absolute;top:-200px;left:50%;
+  transform:translateX(-50%);
+  width:600px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,.09),transparent 70%);
+  pointer-events:none;
+}
+.cin{max-width:720px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.chead{
+  font-size:clamp(2rem,4vw,3rem);font-weight:900;
+  letter-spacing:-.05em;line-height:1.05;
+  color:var(--wh);margin-bottom:.9rem;
+}
+.chead em{
+  font-style:normal;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.csub{color:var(--gr);font-size:.93rem;line-height:1.75;margin-bottom:2.25rem;}
+.cemail{
+  display:inline-flex;align-items:center;gap:.65rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.87rem;color:var(--wh);
+  background:var(--card);border:1px solid var(--rim);
+  padding:.9rem 1.75rem;border-radius:10px;
+  margin-bottom:1.75rem;transition:border-color .2s;
+}
+.cemail:hover{border-color:var(--rim2);}
+.cbtns{display:flex;justify-content:center;gap:.85rem;flex-wrap:wrap;margin-bottom:2.25rem;}
+/* Contact info grid */
+.cgrid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:.85rem;max-width:460px;margin:0 auto 2rem;
+  text-align:left;
+}
+.clnk{
+  display:flex;align-items:center;gap:.7rem;
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:10px;padding:.9rem 1.1rem;
+  transition:border-color .2s;
+}
+.clnk:hover{border-color:var(--rim2);}
+.clnk-ico{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(124,58,237,.11);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;flex-shrink:0;
+}
+.clnk-lbl{font-size:.68rem;color:var(--gr);}
+.clnk-val{font-size:.78rem;color:var(--wh);font-weight:600;}
+/* Form */
+.cform{
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:16px;padding:2rem;text-align:left;
+}
+.cf-hd{font-size:.95rem;font-weight:700;color:var(--wh);margin-bottom:1.1rem;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem;}
+.cf-full{margin-bottom:.85rem;}
+.cfl{display:block;font-size:.73rem;color:var(--gr);margin-bottom:.3rem;font-weight:500;}
+.cfi,.cfta{
+  width:100%;background:var(--mid);
+  border:1px solid var(--rim);border-radius:7px;
+  padding:.72rem .95rem;
+  color:var(--wh);font-family:'Outfit',sans-serif;
+  font-size:.84rem;outline:none;
+  transition:border-color .2s;
+}
+.cfi:focus,.cfta:focus{border-color:var(--rim2);}
+.cfta{height:105px;resize:none;}
+.cfbtn{
+  width:100%;background:var(--grad);color:#fff;
+  border:none;border-radius:7px;
+  padding:.82rem;font-size:.88rem;font-weight:700;
+  cursor:pointer;font-family:'Outfit',sans-serif;
+  transition:opacity .2s,transform .2s;
+}
+.cfbtn:hover{opacity:.85;transform:translateY(-1px);}
+
+/* ═══════════════════════════════════════════════
+   RESUME STRIP
+═══════════════════════════════════════════════ */
+#resume{
+  padding:3.5rem 5%;
+  background:var(--deep);
+  border-top:1px solid var(--rim);
+}
+.res-inner{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;gap:2rem;
+}
+.res-t{font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--wh);margin-bottom:.4rem;}
+.res-p{font-size:.85rem;color:var(--gr);max-width:380px;line-height:1.7;}
+.rbadges{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem;}
+.rbadge{
+  display:flex;align-items:center;gap:.3rem;
+  background:var(--card);border:1px solid var(--rim);
+  border-radius:5px;padding:.33rem .75rem;
+  font-size:.73rem;color:var(--gr);
+}
+.res-btns{display:flex;gap:.85rem;flex-wrap:wrap;}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{
+  background:var(--ink);
+  border-top:1px solid var(--rim);
+  padding:1.75rem 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.fn{font-size:.83rem;font-weight:700;color:var(--wh);}
+.fc-copy{font-size:.72rem;color:var(--dm);}
+.fstatus{
+  display:flex;align-items:center;gap:.42rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;color:var(--gn);
+}
+.fstatus::before{
+  content:'';width:6px;height:6px;
+  border-radius:50%;background:var(--gn);
+  animation:pulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media(max-width:1100px){
+  #hero{grid-template-columns:1fr;}
+  .hr{display:none;}
+  .hl{padding:4rem 5% 3rem;}
+  .svc-outer{grid-template-columns:1fr;}
+  .pgrid{grid-template-columns:1fr;}
+  .exp-grid{grid-template-columns:1fr;}
+  .sk-outer{grid-template-columns:1fr;}
+  .diss-grid{grid-template-columns:1fr;}
+  .tgrid{grid-template-columns:1fr 1fr;}
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .sk-circles{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:768px){
+  nav{padding:.85rem 5%;}
+  .nl{display:none;}
+  .sec{padding:4rem 5%;}
+  #strip{padding:2rem 5%;}
+  .sr{grid-template-columns:1fr 1fr;}
+  .si-box:nth-child(2){border-right:none;}
+  .tgrid{grid-template-columns:1fr;}
+  .blog-grid{grid-template-columns:1fr;}
+  .cgrid{grid-template-columns:1fr;}
+  .cf-row{grid-template-columns:1fr;}
+  .sk-circles{grid-template-columns:repeat(3,1fr);}
+  footer{flex-direction:column;text-align:center;}
+  .res-inner{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ NAV ══════ -->
+<nav>
+  <div class="nb">
+    <div class="nbm">NK</div>
+    <div class="nbn">Narendra Kalisetti</div>
+  </div>
+  <ul class="nl">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#dissertation">Research</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:narendrakalisetti@outlook.com" class="nhire">Let's Talk →</a>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="hl">
+    <div class="hbadge fade-up d1">
+      <span class="hdot"></span>
+      Open to Work · UK · No Sponsorship Needed
+    </div>
+    <div class="hgreet fade-up d2">// Azure Data Engineer & Data Analyst</div>
+    <h1 class="fade-up d2">Narendra<br>Kalisetti</h1>
+    <div class="htitle fade-up d3">
+      <span class="t-azure">Azure Data Engineer</span>
+      <span class="t-amp"> + </span><br>
+      <span class="t-ana">Data Analyst</span>
+    </div>
+    <p class="hdesc fade-up d3">
+      I build <strong>production data platforms</strong> that handle real regulatory requirements — fintech, NHS healthcare, and energy infrastructure. <strong>PySpark · Terraform · SQL · Power BI</strong>. MSc Applied Data Science, Teesside University.
+    </p>
+    <div class="hbtns fade-up d4">
+      <a href="#projects" class="bp">View My Work ↓</a>
+      <a href="https://narendra-portfolio-ochre.vercel.app/Narendra_Kalisetti_Resume.pdf" target="_blank" class="bs">⬇ Download CV</a>
+    </div>
+    <div class="hsoc fade-up d5">
+      <a href="https://github.com/narendrakalisetti" target="_blank" class="si" title="GitHub">⚡</a>
+      <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="si" title="LinkedIn">💼</a>
+      <a href="mailto:narendrakalisetti@outlook.com" class="si" title="Email">✉</a>
+      <a href="tel:+447818915700" class="si" title="Phone">📞</a>
+    </div>
+    <div class="hstats fade-up d6">
+      <div class="hstat"><div class="hsn">2+</div><div class="hsl">Years Azure<br>Engineering</div></div>
+      <div class="hstat"><div class="hsn">5</div><div class="hsl">Production<br>Projects</div></div>
+      <div class="hstat"><div class="hsn">2.4M</div><div class="hsl">Transactions<br>per Day</div></div>
+      <div class="hstat"><div class="hsn">0.61</div><div class="hsl">Gini<br>Scorecard</div></div>
+    </div>
+  </div>
+
+  <div class="hr">
+    <div class="hw">
+      <div class="fc fc-tl">
+        <div class="fci fci-p">📊</div>
+        <div><div class="fcv">2+</div><div class="fcl">Years Azure Experience</div></div>
+      </div>
+      <div class="fc fc-br">
+        <div class="fci fci-g">✅</div>
+        <div><div class="fcv">5</div><div class="fcl">Production Projects</div></div>
+      </div>
+      <div class="fc fc-bl">
+        <div class="fci fci-b">⚡</div>
+        <div><div class="fcv">2.4M</div><div class="fcl">Txns / Day</div></div>
+      </div>
+      <div class="hphoto">
+        <div class="hphoto-init">NK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ STRIP ══════ -->
+<div id="strip">
+  <div class="sr">
+    <div class="si-box"><div class="sv">2<span class="su">+</span></div><div class="sl">Years Azure<br>Data Engineering</div></div>
+    <div class="si-box"><div class="sv">2.4<span class="su">M</span></div><div class="sl">Daily Transactions<br>Processed Real-Time</div></div>
+    <div class="si-box"><div class="sv">0.61</div><div class="sl">Gini — Credit<br>Risk Scorecard</div></div>
+    <div class="si-box"><div class="sv">4.2<span class="su">%</span></div><div class="sl">Prophet MAPE<br>NHS Forecasting</div></div>
+  </div>
+</div>
+
+<!-- ══════ SERVICES ══════ -->
+<section id="services" class="sec">
+  <div class="svc-outer">
+    <div>
+      <div class="ey">what I do</div>
+      <h2 class="sh">My <em>Quality</em> Services</h2>
+      <p class="sp">Six core areas of expertise — every one delivered in production. Click to expand each service.</p>
+      <div class="svc-list" id="svcList">
+
+        <div class="svc-item open" data-panel="p1">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">01</span><span class="svc-name">Azure Data Engineering</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+        <div class="svc-item" data-panel="p2">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">02</span><span class="svc-name">Streaming Pipelines</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+        <div class="svc-item" data-panel="p3">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">03</span><span class="svc-name">Data Analytics & Power BI</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+        <div class="svc-item" data-panel="p4">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">04</span><span class="svc-name">Terraform Infrastructure as Code</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+        <div class="svc-item" data-panel="p5">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">05</span><span class="svc-name">Regulatory Compliance</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+        <div class="svc-item" data-panel="p6">
+          <div class="svc-trigger">
+            <div class="svc-left"><span class="svc-num">06</span><span class="svc-name">ML & Predictive Analytics</span></div>
+            <div class="svc-arr">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active panel right side -->
+    <div class="svc-panel highlighted c-p" id="svcPanel">
+      <div class="sp-badge" id="spBadge">Azure Engineering</div>
+      <div class="sp-ico" id="spIco">🏗</div>
+      <div class="sp-title" id="spTitle">Azure Data Engineering</div>
+      <div class="sp-desc" id="spDesc">End-to-end pipeline design using Azure Data Factory, Databricks, ADLS Gen2, and Delta Lake. Medallion architecture (Bronze/Silver/Gold), schema enforcement, idempotent writes, and data quality validation at every layer.</div>
+      <div class="sp-tags" id="spTags">
+        <span class="sptag">Azure Databricks</span><span class="sptag">Azure Data Factory</span>
+        <span class="sptag">Delta Lake</span><span class="sptag">ADLS Gen2</span>
+        <span class="sptag">PySpark</span><span class="sptag">Medallion Architecture</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROJECTS ══════ -->
+<section id="projects" class="sec sec-alt">
+  <div class="row-top">
+    <div>
+      <div class="ey">portfolio</div>
+      <h2 class="sh">My <em>Recent Works</em></h2>
+      <p class="sp" style="margin-bottom:0">Six production-grade projects across regulated UK industries. All code public on GitHub with CI/CD.</p>
+    </div>
+    <a href="https://github.com/narendrakalisetti" target="_blank" class="see-all">View All on GitHub →</a>
+  </div>
+  <div class="ptabs">
+    <div class="ptab on">All</div>
+    <div class="ptab">Azure</div>
+    <div class="ptab">Analytics</div>
+    <div class="ptab">ML</div>
+  </div>
+  <div class="pgrid">
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0a0e1f,#0f132a);">
+        <div class="pthumb-bg">
+          <div style="display:flex;gap:3px;align-items:flex-end;opacity:.3;">
+            <div style="width:8px;height:30px;background:var(--gn);border-radius:2px;"></div>
+            <div style="width:8px;height:50px;background:var(--gn);border-radius:2px;"></div>
+            <div style="width:8px;height:40px;background:var(--gn);border-radius:2px;"></div>
+            <div style="width:8px;height:65px;background:var(--gn);border-radius:2px;"></div>
+            <div style="width:8px;height:45px;background:var(--gn);border-radius:2px;"></div>
+            <div style="width:8px;height:55px;background:var(--gn);border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="pglow"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">⚡</div>
+          <div class="pthumb-stack">PySpark · Event Hubs · Delta Lake</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-f"></div>
+      <div class="pbody">
+        <span class="pdom df">Fintech · MLR 2017 · GDPR</span>
+        <div class="ptitle">Real-Time Fraud Detection Pipeline</div>
+        <div class="pmets"><span class="pmet">⚡ 2.4M txns/day</span><span class="pmet">🔒 SHA-256 IBAN</span><span class="pmet">📋 SAR Routing</span></div>
+        <p class="pdesc">UK payment processor needed real-time fraud detection. Built PySpark Structured Streaming — <strong>5-factor risk scoring engine</strong>, GDPR pseudonymisation, Bronze/Silver/Gold Delta Lake, MLR 2017 SAR queue routing. 10-min watermark, 99.2% late arrival coverage.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">PySpark</span><span class="pch">Databricks</span><span class="pch">Event Hubs</span><span class="pch">Key Vault</span></div>
+          <a href="https://github.com/narendrakalisetti/Fintech-Fraud-Detection" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0f1120,#131428);">
+        <div class="pglow" style="background:radial-gradient(circle at 50% 50%,rgba(245,158,11,.1),transparent 70%);"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">🏗</div>
+          <div class="pthumb-stack">Terraform · ADLS Gen2 · ADF · Databricks</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-e"></div>
+      <div class="pbody">
+        <span class="pdom de">Energy · Net Zero 2050 · UK GDPR</span>
+        <div class="ptitle">EnergyZero Azure Lakehouse — Terraform IaC</div>
+        <div class="pmets"><span class="pmet">🔑 CMK Encryption</span><span class="pmet">💰 ~40% cost cut</span></div>
+        <p class="pdesc">Full Terraform IaC for UK energy company — <strong>ADLS Gen2 medallion architecture</strong>, ADF with managed identity, Databricks VNet injection, Key Vault CMK, private endpoints, Log Analytics alerting, remote state locking. Zero manual infrastructure.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">Terraform</span><span class="pch">ADLS Gen2</span><span class="pch">ADF</span><span class="pch">Databricks</span></div>
+          <a href="https://github.com/narendrakalisetti/EnergyZero-Terraform" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0a0f20,#0e1328);">
+        <div class="pglow" style="background:radial-gradient(circle at 50% 50%,rgba(59,130,246,.1),transparent 70%);"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">🏥</div>
+          <div class="pthumb-stack">Python · Prophet · PostgreSQL · Power BI</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-n"></div>
+      <div class="pbody">
+        <span class="pdom dn">Healthcare · NHS England · 200+ Trusts</span>
+        <div class="ptitle">NHS Elective Recovery & Patient Flow Analytics</div>
+        <div class="pmets"><span class="pmet">📉 MAPE 4.2%</span><span class="pmet">⚠️ 1.9× deprivation gap</span></div>
+        <p class="pdesc">Tracks NHS waiting list recovery across 200+ Trusts — RTT analytics, IMD deprivation integration, composite risk scoring, <strong>Prophet forecasting reduced MAPE from 18.7% to 4.2%</strong> via COVID changepoints. Power BI What-If parameters for scenario planning.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">Python</span><span class="pch">Prophet</span><span class="pch">PostgreSQL</span><span class="pch">Power BI</span></div>
+          <a href="https://github.com/narendrakalisetti/NHS-Elective-Recovery" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0c0e22,#10122a);">
+        <div class="pglow"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">💳</div>
+          <div class="pthumb-stack">scikit-learn · WOE/IV · SHAP · SQL</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-c"></div>
+      <div class="pbody">
+        <span class="pdom dc">Financial Services · IFRS 9 · Basel III</span>
+        <div class="ptitle">Financial & Credit Risk Analytics Platform</div>
+        <div class="pmets"><span class="pmet">📊 Gini 0.61</span><span class="pmet">💰 £32.4M ECL</span><span class="pmet">🏦 4 Stress Tests</span></div>
+        <p class="pdesc">Credit scorecard with WOE/IV feature selection, <strong>Gini 0.61 · KS 0.42 · AUC 0.80</strong>, SHAP explainability, IFRS 9 three-stage ECL, NPL monitoring, Basel III stress testing — NPL hits 11.7% under severe recession.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">scikit-learn</span><span class="pch">WOE/IV</span><span class="pch">SHAP</span><span class="pch">Power BI</span></div>
+          <a href="https://github.com/narendrakalisetti/Financial-Loan-Risk" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0a1020,#0e1428);">
+        <div class="pglow" style="background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.08),transparent 70%);"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">⚡</div>
+          <div class="pthumb-stack">Python · National Grid ESO API · K-Means</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-r"></div>
+      <div class="pbody">
+        <span class="pdom dr">Energy · Net Zero · ESO API</span>
+        <div class="ptitle">UK Energy Transition & Carbon Intensity Analytics</div>
+        <div class="pmets"><span class="pmet">🌱 14% YoY CO₂ cut</span><span class="pmet">⚡ 5 grid states</span></div>
+        <p class="pdesc">Live pipeline from National Grid ESO API — <strong>14% YoY carbon intensity reduction</strong>, 60% attributed to offshore wind. K-Means identified 5 grid operating states including vulnerable ~15% high-carbon cluster. Automated incremental updates.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">Python</span><span class="pch">K-Means</span><span class="pch">SQL</span><span class="pch">Power BI</span></div>
+          <a href="https://github.com/narendrakalisetti/UK-Energy-Transition" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pthumb" style="background:linear-gradient(145deg,#0f0b20,#130d28);">
+        <div class="pglow" style="background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.08),transparent 70%);"></div>
+        <div class="pthumb-content">
+          <div class="pthumb-icon">🛒</div>
+          <div class="pthumb-stack">XGBoost · RFM · Apriori · Prophet</div>
+        </div>
+      </div>
+      <div class="pcard-accent ac-s"></div>
+      <div class="pbody">
+        <span class="pdom ds">Retail · Customer Analytics · ML</span>
+        <div class="ptitle">Retail Sales & Customer Analytics</div>
+        <div class="pmets"><span class="pmet">🎯 AUC 0.87 churn</span><span class="pmet">📦 3.4× basket lift</span></div>
+        <p class="pdesc">Full retail analytics — RFM segmentation (top 20% drive 68% revenue), <strong>XGBoost churn model AUC 0.87</strong> catching 72% of churners 60 days early, Apriori market basket 3.4× lift, monthly cohort retention analysis.</p>
+        <div class="pfoot">
+          <div class="pchips"><span class="pch">XGBoost</span><span class="pch">Apriori</span><span class="pch">Prophet</span><span class="pch">SQL</span></div>
+          <a href="https://github.com/narendrakalisetti/Retail-Sales-Analytics" target="_blank" class="plnk">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ EXPERIENCE ══════ -->
+<section id="experience" class="sec">
+  <div class="ey">track record</div>
+  <h2 class="sh">My <em>Experience</em></h2>
+  <p class="sp">Two years of commercial Azure data engineering, backed by an MSc in Applied Data Science.</p>
+  <div class="exp-grid">
+    <div>
+      <div class="excol-hd"><div class="excol-ico">💼</div>Work Experience</div>
+      <div class="tl">
+        <div class="tli">
+          <div class="tldot"></div>
+          <div class="tlb">
+            <div class="tlper">Jul 2022 – Sep 2024 · 2 yrs 3 mos</div>
+            <div class="tlttl">Data Engineer</div>
+            <div class="tlco">Asics Technologies · Hyderabad, India · Hybrid</div>
+            <ul class="tlbul">
+              <li>Built end-to-end pipelines on <strong>Azure Data Factory &amp; Databricks</strong>, millions of records daily across Bronze/Silver/Gold Delta Lake — <strong>30% faster transformation</strong></li>
+              <li>Optimised PySpark jobs and SQL — compute costs reduced by <strong>20%</strong> via partition pruning and Z-ordering</li>
+              <li>Reduced <strong>Power BI refresh time by 25%</strong> — same-day operational data for senior stakeholders</li>
+              <li>Implemented schema enforcement, data validation, and error handling — reduced downstream pipeline failures</li>
+              <li>Translated business requirements into scalable data models and automated pipeline solutions</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <div class="excol-hd"><div class="excol-ico">🎓</div>Education</div>
+      <div class="tl">
+        <div class="tli">
+          <div class="tldot"></div>
+          <div class="tlb">
+            <div class="tlper">Sep 2024 – May 2026</div>
+            <div class="tlttl">MSc Applied Data Science</div>
+            <div class="tlco">Teesside University · Middlesbrough, UK 🇬🇧</div>
+            <ul class="tlbul">
+              <li><strong>Dissertation:</strong> Multi-Task Learning for Deepfake Detection — ResNet-50, MTLFace, FaceForensics++, SHAP/LIME</li>
+              <li><strong>Key Projects:</strong> NHS RTT forecasting (MAPE 4.2%), Azure IaC (Terraform), Credit Scorecard (Gini 0.61)</li>
+              <li>Data Engineering · Machine Learning · Cloud Computing · Statistical Analysis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tli">
+          <div class="tldot"></div>
+          <div class="tlb">
+            <div class="tlper">2018 – 2022</div>
+            <div class="tlttl">B.Tech, Computer Science</div>
+            <div class="tlco">JNTU, Kakinada · Grade: 7.39 CGPA</div>
+            <ul class="tlbul">
+              <li>Strong foundation in programming, databases, algorithms and data structures</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SKILLS ══════ -->
+<section id="skills" class="sec sec-alt">
+  <div class="ey">capabilities</div>
+  <h2 class="sh">My <em>Skills</em></h2>
+  <p class="sp">Every skill applied in a real production project — not a tutorial or course certificate.</p>
+  <div class="sk-outer">
+    <div>
+      <div class="sk-cats">
+        <div>
+          <div class="skcat-t">Data Engineering</div>
+          <div class="sktags">
+            <div class="sktag"><span>⚙️</span><span>Azure Databricks</span></div>
+            <div class="sktag"><span>🔥</span><span>PySpark</span></div>
+            <div class="sktag"><span>🏭</span><span>Azure Data Factory</span></div>
+            <div class="sktag"><span>🏔</span><span>Delta Lake</span></div>
+            <div class="sktag"><span>💧</span><span>ADLS Gen2</span></div>
+            <div class="sktag"><span>📡</span><span>Event Hubs</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="skcat-t">Cloud & Infrastructure</div>
+          <div class="sktags">
+            <div class="sktag"><span>🏗</span><span>Terraform</span></div>
+            <div class="sktag"><span>🔑</span><span>Key Vault</span></div>
+            <div class="sktag"><span>⚡</span><span>GitHub Actions</span></div>
+            <div class="sktag"><span>📊</span><span>Log Analytics</span></div>
+            <div class="sktag"><span>🛡</span><span>Azure Monitor</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="skcat-t">Programming & Analytics</div>
+          <div class="sktags">
+            <div class="sktag"><span>🐍</span><span>Python</span></div>
+            <div class="sktag"><span>🗄</span><span>SQL</span></div>
+            <div class="sktag"><span>📈</span><span>Power BI</span></div>
+            <div class="sktag"><span>📐</span><span>DAX</span></div>
+            <div class="sktag"><span>🔮</span><span>Prophet</span></div>
+            <div class="sktag"><span>🤖</span><span>XGBoost</span></div>
+            <div class="sktag"><span>🧠</span><span>scikit-learn</span></div>
+            <div class="sktag"><span>🔍</span><span>SHAP</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="skcat-t">Regulatory Compliance</div>
+          <div class="sktags">
+            <div class="sktag"><span>🔒</span><span>UK GDPR</span></div>
+            <div class="sktag"><span>📋</span><span>MLR 2017</span></div>
+            <div class="sktag"><span>💰</span><span>IFRS 9</span></div>
+            <div class="sktag"><span>🏦</span><span>Basel III</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Skill rings + bars -->
+    <div>
+      <div class="sk-circles" id="skillCircles">
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#7c3aed" style="stroke-dashoffset:22"/></svg><div class="pct">90%</div></div><div class="skc-lbl">Azure<br>Databricks</div></div>
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#10b981" style="stroke-dashoffset:33"/></svg><div class="pct">85%</div></div><div class="skc-lbl">Python<br>& SQL</div></div>
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#3b82f6" style="stroke-dashoffset:33"/></svg><div class="pct">85%</div></div><div class="skc-lbl">Power<br>BI / DAX</div></div>
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#f59e0b" style="stroke-dashoffset:44"/></svg><div class="pct">80%</div></div><div class="skc-lbl">Terraform<br>IaC</div></div>
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#22d3ee" style="stroke-dashoffset:33"/></svg><div class="pct">85%</div></div><div class="skc-lbl">Delta<br>Lake</div></div>
+        <div class="skc"><div class="skc-ring"><svg viewBox="0 0 80 80"><circle class="track" cx="40" cy="40" r="35"/><circle class="fill" cx="40" cy="40" r="35" stroke="#9d6cff" style="stroke-dashoffset:66"/></svg><div class="pct">70%</div></div><div class="skc-lbl">Deep<br>Learning</div></div>
+      </div>
+      <div class="sbars" style="margin-top:2rem;">
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">Azure Databricks / PySpark</span><span class="sbar-p">90%</span></div><div class="sbar-tr"><div class="sf sf-p" style="width:90%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">Azure Data Factory & Delta Lake</span><span class="sbar-p">85%</span></div><div class="sbar-tr"><div class="sf sf-p" style="width:85%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">Python & SQL</span><span class="sbar-p">90%</span></div><div class="sbar-tr"><div class="sf sf-g" style="width:90%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">Power BI / DAX</span><span class="sbar-p">85%</span></div><div class="sbar-tr"><div class="sf sf-b" style="width:85%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">Terraform IaC</span><span class="sbar-p">80%</span></div><div class="sbar-tr"><div class="sf sf-a" style="width:80%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">GitHub Actions CI/CD</span><span class="sbar-p">85%</span></div><div class="sbar-tr"><div class="sf sf-g" style="width:85%"></div></div></div>
+        <div class="sbar"><div class="sbar-hd"><span class="sbar-n">scikit-learn / XGBoost / Prophet</span><span class="sbar-p">80%</span></div><div class="sbar-tr"><div class="sf sf-b" style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ DISSERTATION ══════ -->
+<section id="dissertation" class="sec">
+  <div class="ey">academic research</div>
+  <h2 class="sh">MSc <em>Dissertation</em></h2>
+  <p class="sp">Applied deep learning research with direct relevance to UK financial fraud detection and media integrity.</p>
+  <div class="diss-grid">
+    <div>
+      <div class="dbadge">MSc Applied Data Science · Teesside University · 2025–2026</div>
+      <div class="dh">Deepfake Detection Using Multi-Task Learning &amp; Clustering</div>
+      <div class="dtext">
+        <p><strong>The problem:</strong> Deepfake media poses serious risks in UK financial services (identity fraud, account takeover) and law enforcement. Single-task models fail on unseen manipulation types — they can't generalise across the full attack surface.</p>
+        <p><strong>Approach:</strong> Multi-Task Learning trains a single ResNet-50 backbone across multiple detection tasks simultaneously — sharing feature representations for better generalisation. Gender classification auxiliary task improves feature learning. Contrastive learning generates structured embeddings. K-Means classifies real vs fake without requiring labels for every sample.</p>
+        <p><strong>Explainability:</strong> SHAP and LIME layers provide interpretable outputs — critical for regulatory acceptance in financial services and law enforcement.</p>
+      </div>
+      <div class="dtags">
+        <span class="dtag">PyTorch</span><span class="dtag">ResNet-50</span><span class="dtag">MTLFace</span>
+        <span class="dtag">FaceForensics++</span><span class="dtag">Multi-Task Learning</span>
+        <span class="dtag">K-Means</span><span class="dtag">SHAP</span><span class="dtag">LIME</span>
+        <span class="dtag">Contrastive Learning</span><span class="dtag">OpenCV</span>
+      </div>
+    </div>
+    <div>
+      <div class="dpanel">
+        <div class="dpanel-hd">// research overview</div>
+        <div class="drow"><div class="dico">🧠</div><div><div class="dk">Model Architecture</div><div class="dv">ResNet-50 + MTLFace task heads</div></div></div>
+        <div class="drow"><div class="dico">🎯</div><div><div class="dk">Approach</div><div class="dv">Multi-Task Learning with contrastive embeddings</div></div></div>
+        <div class="drow"><div class="dico">📊</div><div><div class="dk">Classifier</div><div class="dv">K-Means on structured embedding space</div></div></div>
+        <div class="drow"><div class="dico">📁</div><div><div class="dk">Training Data</div><div class="dv">MTLFace dataset</div></div></div>
+        <div class="drow"><div class="dico">🔬</div><div><div class="dk">Benchmark</div><div class="dv">FaceForensics++ — 4 manipulation types</div></div></div>
+        <div class="drow"><div class="dico">🔍</div><div><div class="dk">Explainability</div><div class="dv">SHAP + LIME for stakeholder reporting</div></div></div>
+        <div class="drow"><div class="dico">🌍</div><div><div class="dk">Real-World Application</div><div class="dv">Financial fraud · Identity verification · Media integrity</div></div></div>
+        <div class="drow"><div class="dico">📅</div><div><div class="dk">Completion</div><div class="dv">May 2026 · Teesside University</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TESTIMONIALS ══════ -->
+<section id="testimonials" class="sec sec-alt">
+  <div class="ey">client stories</div>
+  <h2 class="sh">My <em>Client's Stories</em></h2>
+  <p class="sp">Feedback from colleagues, managers, and supervisors who have worked with this code in production.</p>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="tq">"</div>
+      <p class="tt">Narendra built a streaming pipeline from concept to production in 6 weeks. The <strong>MLR 2017 compliance layer</strong> was particularly impressive — he understood the regulatory requirement, not just the technical implementation. Rare at this experience level.</p>
+      <div class="tau"><div class="tav">AK</div><div><div class="tn">Arjun Kumar</div><div class="tr">Senior Data Architect · Asics Technologies</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="tq">"</div>
+      <p class="tt">The Terraform IaC platform Narendra built is exactly what production infrastructure should look like — <strong>CMK encryption, private endpoints, remote state locking</strong>. Nothing was cut for convenience. It would pass any enterprise cloud security review.</p>
+      <div class="tau"><div class="tav">PR</div><div><div class="tn">Priya Rao</div><div class="tr">Cloud Infrastructure Lead · Asics Technologies</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="tq">"</div>
+      <p class="tt">The NHS analytics platform handles messy, inconsistent open data with genuine engineering rigour — Trust mergers, schema changes, COVID changepoints all correctly handled. <strong>MAPE of 4.2% on a 6-month horizon</strong> is outstanding for this dataset.</p>
+      <div class="tau"><div class="tav">SK</div><div><div class="tn">Dr. Sanjeev Kumar</div><div class="tr">MSc Supervisor · Teesside University</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ BLOG / INSIGHTS (matching reference) ══════ -->
+<section class="sec">
+  <div class="row-top">
+    <div>
+      <div class="ey">insights</div>
+      <h2 class="sh">Recent <em>Blogs</em></h2>
+      <p class="sp" style="margin-bottom:0">Technical write-ups and engineering notes from building production data systems.</p>
+    </div>
+    <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="see-all">See All Posts →</a>
+  </div>
+  <div class="blog-grid">
+    <div class="bcard">
+      <div class="bthumb" style="background:linear-gradient(145deg,#0a0e1f,#0f132a);">
+        <div class="bthumb-glow"></div>
+        <span style="position:relative;z-index:1;filter:drop-shadow(0 0 8px rgba(124,58,237,.5));">⚡</span>
+      </div>
+      <div class="bbody">
+        <span class="btag">Azure Engineering</span>
+        <div class="btitle">Why I used a 10-minute watermark in the fraud detection pipeline — not 1 hour</div>
+        <div class="bdate">March 2026 · 5 min read</div>
+      </div>
+    </div>
+    <div class="bcard">
+      <div class="bthumb" style="background:linear-gradient(145deg,#0a1220,#0e1628);">
+        <div class="bthumb-glow" style="background:radial-gradient(circle at 50% 50%,rgba(16,185,129,.1),transparent 70%);"></div>
+        <span style="position:relative;z-index:1;filter:drop-shadow(0 0 8px rgba(16,185,129,.5));">📊</span>
+      </div>
+      <div class="bbody">
+        <span class="btag">NHS Analytics</span>
+        <div class="btitle">COVID changepoints: how domain knowledge reduced Prophet MAPE from 18.7% to 4.2%</div>
+        <div class="bdate">February 2026 · 7 min read</div>
+      </div>
+    </div>
+    <div class="bcard">
+      <div class="bthumb" style="background:linear-gradient(145deg,#0f0b20,#130d28);">
+        <div class="bthumb-glow" style="background:radial-gradient(circle at 50% 50%,rgba(245,158,11,.1),transparent 70%);"></div>
+        <span style="position:relative;z-index:1;filter:drop-shadow(0 0 8px rgba(245,158,11,.5));">🏗</span>
+      </div>
+      <div class="bbody">
+        <span class="btag">Terraform IaC</span>
+        <div class="btitle">Remote state locking in Azure: why two engineers pushing simultaneously broke our lakehouse</div>
+        <div class="bdate">January 2026 · 6 min read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RESUME ══════ -->
+<section id="resume" style="padding:3.5rem 5%;background:var(--mid);border-top:1px solid var(--rim);">
+  <div class="res-inner">
+    <div>
+      <div class="ey">cv</div>
+      <div class="res-t">Download My <em style="font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Resume</em></div>
+      <p class="res-p">Full CV covering 2+ years commercial experience, 6 production projects, MSc research, and UK work eligibility. Available for roles immediately after May 2026.</p>
+      <div class="rbadges">
+        <span class="rbadge">✅ UK Graduate Route</span>
+        <span class="rbadge">📍 Middlesbrough, UK</span>
+        <span class="rbadge">🎓 MSc Data Science</span>
+        <span class="rbadge">🚫 No Sponsorship Needed</span>
+        <span class="rbadge">📅 Available May 2026</span>
+      </div>
+    </div>
+    <div class="res-btns">
+      <a href="https://narendra-portfolio-ochre.vercel.app/Narendra_Kalisetti_Resume.pdf" target="_blank" class="bp">⬇ Download PDF Resume</a>
+      <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="bs">💼 LinkedIn Profile</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CONTACT ══════ -->
+<section id="contact">
+  <div class="cblob"></div>
+  <div class="cin">
+    <div class="ey" style="justify-content:center">get in touch</div>
+    <h2 class="chead">Let's <em>Work Together</em></h2>
+    <p class="csub">I'm actively looking for <strong style="color:var(--wh)">Azure Data Engineer, Data Analyst, and BI Developer</strong> roles across the UK. Recruiters — I respond within 24 hours.</p>
+    <a href="mailto:narendrakalisetti@outlook.com" class="cemail">✉ narendrakalisetti@outlook.com</a>
+    <div class="cbtns">
+      <a href="https://github.com/narendrakalisetti" target="_blank" class="bs">⚡ GitHub</a>
+      <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="bp">💼 LinkedIn</a>
+    </div>
+    <div class="cgrid">
+      <a href="mailto:narendrakalisetti@outlook.com" class="clnk"><div class="clnk-ico">✉</div><div><div class="clnk-lbl">Email</div><div class="clnk-val">narendrakalisetti@outlook.com</div></div></a>
+      <a href="tel:+447818915700" class="clnk"><div class="clnk-ico">📞</div><div><div class="clnk-lbl">Phone</div><div class="clnk-val">+44 7818 915700</div></div></a>
+      <a href="https://www.linkedin.com/in/narendra-kalisetti" target="_blank" class="clnk"><div class="clnk-ico">💼</div><div><div class="clnk-lbl">LinkedIn</div><div class="clnk-val">narendra-kalisetti</div></div></a>
+      <a href="https://github.com/narendrakalisetti" target="_blank" class="clnk"><div class="clnk-ico">⚡</div><div><div class="clnk-lbl">GitHub</div><div class="clnk-val">github.com/narendrakalisetti</div></div></a>
+    </div>
+    <div class="cform">
+      <div class="cf-hd">✉️ Send a Message</div>
+      <div class="cf-row">
+        <div><label class="cfl">Your Name</label><input type="text" class="cfi" placeholder="Alex Rivera — Hiring Manager"></div>
+        <div><label class="cfl">Email</label><input type="email" class="cfi" placeholder="alex@company.co.uk"></div>
+      </div>
+      <div class="cf-full"><label class="cfl">Subject</label><input type="text" class="cfi" placeholder="Data Engineer role — Interview request"></div>
+      <div class="cf-full"><label class="cfl">Message</label><textarea class="cfta" placeholder="Hi Narendra, I came across your portfolio and would love to discuss..."></textarea></div>
+      <button class="cfbtn">🚀 Send Message</button>
+    </div>
+    <div style="margin-top:1.75rem;font-size:.77rem;color:var(--dm);">📍 Middlesbrough, England, UK &nbsp;·&nbsp; 🟢 Available immediately &nbsp;·&nbsp; ✅ Graduate Route — No Sponsorship Required</div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div style="display:flex;align-items:center;gap:.6rem;">
+    <div class="nbm">NK</div>
+    <div class="fn">Narendra Kalisetti</div>
+  </div>
+  <div class="fc-copy">© 2026 · Azure Data Engineer & Data Analyst · UK</div>
+  <div class="fstatus">Open to Work · Available Now</div>
+</footer>
+
+<!-- ══════ JAVASCRIPT ══════ -->
+<script>
+// Service panel data
+const services = {
+  p1:{col:'c-p',badge:'Azure Engineering',ico:'🏗',title:'Azure Data Engineering',desc:'End-to-end pipeline design using Azure Data Factory, Databricks, ADLS Gen2, and Delta Lake. Medallion architecture (Bronze/Silver/Gold), schema enforcement, idempotent writes, and data quality validation at every layer.',tags:['Azure Databricks','Azure Data Factory','Delta Lake','ADLS Gen2','PySpark','Medallion Architecture']},
+  p2:{col:'c-b',badge:'Streaming',ico:'⚡',title:'Streaming Pipelines',desc:'PySpark Structured Streaming on Azure Databricks with Event Hubs ingestion. Real-time risk scoring engines, watermark sizing to actual late-arrival distributions, dead-letter handling, and GDPR-compliant pseudonymisation.',tags:['PySpark Streaming','Azure Event Hubs','Delta MERGE','Watermarking','Dead-Letter','GDPR Art.25']},
+  p3:{col:'c-g',badge:'Analytics & BI',ico:'📊',title:'Data Analytics & Power BI',desc:'Prophet time-series forecasting, WOE/IV feature selection, credit risk scorecards, RFM segmentation, XGBoost churn prediction, and Power BI dashboards with DAX measures and What-If scenario parameters.',tags:['Power BI','DAX','Prophet','scikit-learn','XGBoost','WOE/IV','SHAP']},
+  p4:{col:'c-a',badge:'Terraform IaC',ico:'🏛',title:'Terraform Infrastructure as Code',desc:'Production Azure infrastructure as code — ADLS Gen2 with CMK encryption, ADF with managed identity, Databricks VNet injection and auto-terminate, Key Vault RBAC, private endpoints, Log Analytics alerting, remote state backend with locking.',tags:['Terraform','Azure Key Vault','CMK','Private Endpoints','VNet Injection','Remote State']},
+  p5:{col:'c-r',badge:'Compliance',ico:'🔒',title:'Regulatory Compliance',desc:'UK GDPR Art.25 pseudonymisation with salted SHA-256 hashing, MLR 2017 SAR queue routing for transactions over £5,000, IFRS 9 three-stage ECL calculation (PD×LGD×EAD), Basel III capital adequacy stress testing across macro scenarios.',tags:['UK GDPR','MLR 2017','IFRS 9 ECL','Basel III','SAR Routing','PD×LGD×EAD']},
+  p6:{col:'c-c',badge:'ML & AI',ico:'🤖',title:'ML & Predictive Analytics',desc:'XGBoost and logistic regression scorecards with SHAP explainability, K-Means clustering for pattern discovery, Prophet and ARIMA for time-series forecasting, and deep learning with ResNet-50 for image classification tasks.',tags:['XGBoost','scikit-learn','Prophet','K-Means','ResNet-50','SHAP','LIME']}
+};
+
+// Service accordion
+document.querySelectorAll('.svc-item').forEach(item=>{
+  item.querySelector('.svc-trigger').addEventListener('click',()=>{
+    document.querySelectorAll('.svc-item').forEach(i=>i.classList.remove('open'));
+    item.classList.add('open');
+    const d=services[item.dataset.panel];
+    const panel=document.getElementById('svcPanel');
+    // Clear colour classes
+    panel.className='svc-panel highlighted '+d.col;
+    document.getElementById('spBadge').textContent=d.badge;
+    document.getElementById('spBadge').className='sp-badge';
+    document.getElementById('spIco').textContent=d.ico;
+    document.getElementById('spTitle').textContent=d.title;
+    document.getElementById('spDesc').textContent=d.desc;
+    const tags=document.getElementById('spTags');
+    tags.innerHTML=d.tags.map(t=>`<span class="sptag">${t}</span>`).join('');
+  });
+});
+
+// Intersection observer for skill ba
